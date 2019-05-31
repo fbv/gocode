@@ -6,18 +6,18 @@ import (
 )
 
 type HelloArgs struct {
-	name string
+	Name string
 }
 
 type HelloReply struct {
-	message string
+	Message string
 }
 
 type HelloService struct {
 }
 
 func (s *HelloService) Say(r *http.Request, args *HelloArgs, reply *HelloReply) error {
-	fmt.Println("HelloService.Say executed with args:", args.name)
-	reply.message = "Hello " + args.name
+	fmt.Println("HelloService.Say executed with args:", args.Name)
+	reply.Message = "Hello " + args.Name
 	return nil
 }
